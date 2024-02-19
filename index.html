@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PRESENTATION SOUNDBOARD</title>
+</head>
+<body>
+	<style>
+		body, html {
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+
+		.contents {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+		}
+
+		button {
+			width: 200px;
+			aspect-ratio: 9 / 3;
+		}
+	</style>
+	<div class="contents">
+		<button id="Clapping" onclick="playSound('./Clapping.wav')">Clapping</button>
+		<button id="Clapping" onclick="playSound('./Gasp.wav')">Gasp</button>
+		<button id="Clapping" onclick="playSound('./Laugh track.wav')">Laugh track</button>
+		<button id="Clapping" onclick="playSound('./Oh!.wav')">Oh!</button>
+		<button id="Clapping" onclick="playSound('./Splat.wav')">Splat</button>
+	</div>
+	<script>
+		const playSound = (file) => {
+			const audio = new Audio(file);
+			audio.addEventListener("canplaythrough", () => 
+				audio.play()
+			);
+		}
+	</script>
+</body>
+</html>
